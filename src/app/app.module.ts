@@ -27,7 +27,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   ],
   providers: [],
   // bootstrap: [AppComponent]
-  bootstrap: [FlexGridDemo]
-  // bootstrap: [OpenSourceDemo]
+  // bootstrap: [FlexGridDemo]
+  bootstrap: [OpenSourceDemo]
 })
 export class AppModule { }

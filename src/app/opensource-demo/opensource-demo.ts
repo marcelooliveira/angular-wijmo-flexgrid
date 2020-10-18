@@ -23,14 +23,6 @@ export class OpenSourceDemo {
                 { name: 'itemCount', editable: false }
             ];
 
-  save() {
-
-  }
-
-  load() {
-
-  }
-
     updateValue(event, cell, rowIndex) {
         console.log('inline editing rowIndex', rowIndex);
         this.editing[rowIndex + '-' + cell] = false;
