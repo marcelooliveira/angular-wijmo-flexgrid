@@ -1,0 +1,37 @@
+<div class="card main-panel">
+    <div class="card-header">
+        <h1>Wijmo FlexGrid Demo</h1>
+    </div>
+    <div class="card-body">
+      <div class="container-fluid">
+        <wj-flex-grid #flex
+            [itemsSource]="sales" 
+            (initialized)="initializeFlexGrid(flex)">
+            <wj-flex-grid-column [header]="'ID'" [binding]="'id'" [width]="50"></wj-flex-grid-column>
+            <wj-flex-grid-column [header]="'Client'" [binding]="'client'" [width]="150"></wj-flex-grid-column>
+            <wj-flex-grid-column [header]="'Description'" [binding]="'description'" [width]="320"></wj-flex-grid-column>
+            <wj-flex-grid-column [header]="'Value'" format="n2" [binding]="'value'" [width]="100"></wj-flex-grid-column>
+            <wj-flex-grid-column [header]="'Quantity'" format="n0" [binding]="'itemCount'" [width]="100"></wj-flex-grid-column>
+            <wj-flex-grid-column [header]="'Sold By'" [binding]="'soldBy'" [width]="100"></wj-flex-grid-column>
+            <wj-flex-grid-column [header]="'Country'" [binding]="'country'" [width]="100"></wj-flex-grid-column>
+        </wj-flex-grid>
+      </div>
+    </div>
+  <div class="card-footer">	  
+  <div class="input-group">
+    <div class="custom-file">
+      <input type="file" id="importFile"/>
+    </div>
+    <div class="input-group-prepend">
+      <input type="button" value="Import" (click)="load()"/>
+    </div>
+    <div class="input-group-append">
+      <input type="button" class="input-group-text" value="Export" (click)="save()"/>
+    </div>
+  </div>
+  </div>
+ 
+</div>
+
+
+

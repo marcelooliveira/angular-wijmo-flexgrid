@@ -1,0 +1,68 @@
+<div class="card main-panel">
+    <div class="card-header">
+        <h1>Open Source Demo</h1>
+    </div>
+    <div class="card-body">
+      <div class="container-fluid">
+        <ngx-datatable
+            class="bootstrap"
+            [rows]="rows"
+            [columns]="columns"
+            [headerHeight]="50"
+            rowHeight="40"
+            [reorderable]="reorderable"
+        >
+            <ngx-datatable-column name="id"></ngx-datatable-column>
+            <ngx-datatable-column name="country"></ngx-datatable-column>
+            <ngx-datatable-column name="soldBy"></ngx-datatable-column>
+            <ngx-datatable-column name="client">
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                    <span title="Double click to edit"
+                    (dblclick)="editing[rowIndex + '-client'] = true"
+                    *ngIf="!editing[rowIndex + '-client']"
+                    >{{value}}
+                    </span>
+                    <input
+                    autofocus
+                    (blur)="updateValue($event, 'client', rowIndex)"
+                    *ngIf="editing[rowIndex + '-client']"
+                    type="text"
+                    [value]="value"
+                    />
+                </ng-template>
+                </ngx-datatable-column>        
+            <ngx-datatable-column name="description">
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                    <span title="Double click to edit"
+                    (dblclick)="editing[rowIndex + '-description'] = true"
+                    *ngIf="!editing[rowIndex + '-description']"
+                    >{{value}}
+                    </span>
+                    <input
+                    autofocus
+                    (blur)="updateValue($event, 'description', rowIndex)"
+                    *ngIf="editing[rowIndex + '-description']"
+                    type="text"
+                    [value]="value"
+                    />
+                </ng-template>            
+            </ngx-datatable-column>
+            <ngx-datatable-column name="value"></ngx-datatable-column>
+            <ngx-datatable-column name="itemCount"></ngx-datatable-column>        
+        </ngx-datatable>
+        </div>
+      </div>
+    <div class="card-footer">	  
+    <div class="input-group">
+      <div class="custom-file">
+        <input type="file" id="importFile"/>
+      </div>
+      <div class="input-group-prepend">
+        <input type="button" value="Import" (click)="load()"/>
+      </div>
+      <div class="input-group-append">
+        <input type="button" class="input-group-text" value="Export" (click)="save()"/>
+      </div>
+    </div>
+    </div>
+  </div>  
