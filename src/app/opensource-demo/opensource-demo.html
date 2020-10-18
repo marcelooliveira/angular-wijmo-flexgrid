@@ -12,10 +12,10 @@
             rowHeight="40"
             [reorderable]="reorderable"
         >
-            <ngx-datatable-column name="id"></ngx-datatable-column>
-            <ngx-datatable-column name="country"></ngx-datatable-column>
-            <ngx-datatable-column name="soldBy"></ngx-datatable-column>
-            <ngx-datatable-column name="client">
+            <ngx-datatable-column name="Id" prop="id"></ngx-datatable-column>
+            <ngx-datatable-column name="Country" prop="country"></ngx-datatable-column>
+            <ngx-datatable-column name="Sold By" prop="soldBy"></ngx-datatable-column>
+            <ngx-datatable-column name="Client" prop="client">
                 <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                     <span title="Double click to edit"
                     (dblclick)="editing[rowIndex + '-client'] = true"
@@ -31,7 +31,7 @@
                     />
                 </ng-template>
                 </ngx-datatable-column>        
-            <ngx-datatable-column name="description">
+            <ngx-datatable-column name="Description" prop="description">
                 <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                     <span title="Double click to edit"
                     (dblclick)="editing[rowIndex + '-description'] = true"
@@ -47,8 +47,8 @@
                     />
                 </ng-template>            
             </ngx-datatable-column>
-            <ngx-datatable-column name="value"></ngx-datatable-column>
-            <ngx-datatable-column name="itemCount"></ngx-datatable-column>        
+            <ngx-datatable-column name="Value" prop="value"></ngx-datatable-column>
+            <ngx-datatable-column name="Item Count" prop="itemCount"></ngx-datatable-column>        
         </ngx-datatable>
         </div>
       </div>
