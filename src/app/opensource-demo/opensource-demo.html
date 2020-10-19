@@ -3,52 +3,51 @@
         <h1>Open Source Demo</h1>
     </div>
     <div class="card-body">
-      <div class="container-fluid">
-        <ngx-datatable
-            class="bootstrap"
-            [rows]="rows"
-            [headerHeight]="50"
-            rowHeight="40"
-            [reorderable]="reorderable"
-        >
-            <ngx-datatable-column name="Id" prop="id"></ngx-datatable-column>
-            <ngx-datatable-column name="Country" prop="country"></ngx-datatable-column>
-            <ngx-datatable-column name="Sold By" prop="soldBy"></ngx-datatable-column>
-            <ngx-datatable-column name="Client" prop="client">
-                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                    <span title="Double click to edit"
-                    (dblclick)="editing[rowIndex + '-client'] = true"
-                    *ngIf="!editing[rowIndex + '-client']"
-                    >{{value}}
-                    </span>
-                    <input
-                    autofocus
-                    (blur)="updateValue($event, 'client', rowIndex)"
-                    *ngIf="editing[rowIndex + '-client']"
-                    type="text"
-                    [value]="value"
-                    />
-                </ng-template>
+        <div class="container-fluid">
+            <ngx-datatable
+                class="bootstrap"
+                [rows]="rows"
+                [headerHeight]="50"
+                rowHeight="40"
+            >
+                <ngx-datatable-column name="Id" prop="id"></ngx-datatable-column>
+                <ngx-datatable-column name="Country" prop="country"></ngx-datatable-column>
+                <ngx-datatable-column name="Sold By" prop="soldBy"></ngx-datatable-column>
+                <ngx-datatable-column name="Client" prop="client">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span title="Double click to edit"
+                        (dblclick)="editing[rowIndex + '-client'] = true"
+                        *ngIf="!editing[rowIndex + '-client']"
+                        >{{value}}
+                        </span>
+                        <input
+                        autofocus
+                        (blur)="updateValue($event, 'client', rowIndex)"
+                        *ngIf="editing[rowIndex + '-client']"
+                        type="text"
+                        [value]="value"
+                        />
+                    </ng-template>
                 </ngx-datatable-column>        
-            <ngx-datatable-column name="Description" prop="description">
-                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                    <span title="Double click to edit"
-                    (dblclick)="editing[rowIndex + '-description'] = true"
-                    *ngIf="!editing[rowIndex + '-description']"
-                    >{{value}}
-                    </span>
-                    <input
-                    autofocus
-                    (blur)="updateValue($event, 'description', rowIndex)"
-                    *ngIf="editing[rowIndex + '-description']"
-                    type="text"
-                    [value]="value"
-                    />
-                </ng-template>            
-            </ngx-datatable-column>
-            <ngx-datatable-column name="Value" prop="value"></ngx-datatable-column>
-            <ngx-datatable-column name="Item Count" prop="itemCount"></ngx-datatable-column>        
-        </ngx-datatable>
+                <ngx-datatable-column name="Description" prop="description">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span title="Double click to edit"
+                        (dblclick)="editing[rowIndex + '-description'] = true"
+                        *ngIf="!editing[rowIndex + '-description']"
+                        >{{value}}
+                        </span>
+                        <input
+                        autofocus
+                        (blur)="updateValue($event, 'description', rowIndex)"
+                        *ngIf="editing[rowIndex + '-description']"
+                        type="text"
+                        [value]="value"
+                        />
+                    </ng-template>            
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Value" prop="value"></ngx-datatable-column>
+                <ngx-datatable-column name="Item Count" prop="itemCount"></ngx-datatable-column>        
+            </ngx-datatable>
         </div>
-      </div>
-  </div>  
+    </div>
+</div>  

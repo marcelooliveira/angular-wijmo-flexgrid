@@ -10,8 +10,6 @@ import { recentSales } from "../../data/data"
 export class OpenSourceDemo {
   editing = {};
   rows = recentSales;
-  loadingIndicator = true;
-  reorderable = true;
 
     updateValue(event, cell, rowIndex) {
         console.log('inline editing rowIndex', rowIndex);
