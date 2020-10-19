@@ -13,16 +13,6 @@ export class OpenSourceDemo {
   loadingIndicator = true;
   reorderable = true;
 
-  columns = [
-                { name: 'id' },		    
-                { name: 'country' },		
-                { name: 'soldBy' },
-                { name: 'client' },
-                { name: 'description' },	
-                { name: 'value' },
-                { name: 'itemCount', editable: false }
-            ];
-
     updateValue(event, cell, rowIndex) {
         console.log('inline editing rowIndex', rowIndex);
         this.editing[rowIndex + '-' + cell] = false;
